@@ -2,8 +2,8 @@ import React, { createContext, useReducer, useEffect } from "react";
 import AppReducer from './AppReducer';
 
 const initialState = {
-  watchList: localStorage.getItem('watchList') !== null ? JSON.parse(localStorage.getItem('watchList')) : [],
-  watched: localStorage.getItem('watched') !== null ? JSON.parse(localStorage.getItem('watched')) : []
+  watchList: localStorage.getItem('watchList') ? JSON.parse(localStorage.getItem('watchList')) : [],
+  watched: localStorage.getItem('watched') ? JSON.parse(localStorage.getItem('watched')) : []
 };
 
 export const GlobalContext = createContext(initialState);
